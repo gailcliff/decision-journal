@@ -1,0 +1,195 @@
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #1c2321;
+  background: #f4f1ea;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+  background:
+    linear-gradient(135deg, rgba(61, 118, 98, 0.12), transparent 42%),
+    #f4f1ea;
+}
+
+.journal-panel {
+  width: min(100%, 720px);
+  display: grid;
+  gap: 24px;
+}
+
+.heading-group {
+  display: grid;
+  gap: 8px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #3d7662;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.entry-form {
+  display: grid;
+  gap: 12px;
+}
+
+label {
+  font-weight: 700;
+}
+
+textarea {
+  width: 100%;
+  min-height: 220px;
+  resize: vertical;
+  border: 1px solid #c8c0b2;
+  border-radius: 8px;
+  padding: 16px;
+  color: #1c2321;
+  background: #fffdf8;
+  line-height: 1.5;
+  outline: none;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+textarea:focus {
+  border-color: #3d7662;
+  box-shadow: 0 0 0 4px rgba(61, 118, 98, 0.16);
+}
+
+button {
+  width: fit-content;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 20px;
+  color: #ffffff;
+  background: #2d5f52;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    transform 150ms ease;
+}
+
+button:hover:not(:disabled) {
+  background: #214a40;
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.error-message {
+  color: #9f2d20;
+  font-weight: 700;
+}
+
+.entries-section {
+  display: grid;
+  gap: 12px;
+}
+
+.entries-section h2 {
+  font-size: 1.15rem;
+}
+
+.entry-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.journal-entry {
+  display: grid;
+  gap: 14px;
+  border-left: 4px solid #d0824b;
+  border-radius: 0 8px 8px 0;
+  padding: 12px 0 12px 16px;
+  background: rgba(255, 253, 248, 0.68);
+}
+
+.journal-entry p {
+  color: #384541;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.journal-entry dl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin: 0;
+}
+
+.journal-entry div {
+  display: grid;
+  gap: 2px;
+}
+
+.journal-entry dt {
+  color: #5f6965;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.journal-entry dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+@media (max-width: 520px) {
+  .app-shell {
+    align-items: flex-start;
+    padding-block: 32px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
